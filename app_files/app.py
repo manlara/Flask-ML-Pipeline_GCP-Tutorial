@@ -15,7 +15,8 @@ import pickle
 import os
 
 app=Flask(__name__)#create instance on flask
-model=pickle.load(open('treemodel.pkl','rb'))
+model_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'treemodel.pkl')
+model=pickle.load(open(model_path,'rb'))
 
 @app.route('/')
 def home():

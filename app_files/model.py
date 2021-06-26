@@ -18,7 +18,8 @@ print(reg.score)
 
 
 # Loading the model to compare results
-model=pickle.load(open('treemodel.pkl','rb'))
+model_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'treemodel.pkl')
+model=pickle.load(open(model_path,'rb'))
 x_test=np.array([[16000, 135000, 450000]])
 print(x_test)
 print(model.predict(x_test))
@@ -73,6 +74,7 @@ plt.legend()
 plt.show()
 
 #Save the model
-pickle.dump(reg,open('treemodel.pkl','wb'))
+model_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'treemodel.pkl')
+pickle.dump(reg,open(model_path,'wb'))
 
 
